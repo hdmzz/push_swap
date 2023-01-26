@@ -1,8 +1,11 @@
 #include "libft/libft.h"
 
+void	insert
+
+
 int	main(int ac, char **av)
 {
-	int	*pile_a;
+	int	*stack_a;
 	int	i;
 	int	j;
 
@@ -13,17 +16,17 @@ int	main(int ac, char **av)
 		ft_printf("Il faut une liste d'entiers à trier");
 		exit(EXIT_FAILURE);
 	}
-	pile_a = malloc(sizeof(int) * (ac - 1));
-	if (!pile_a)
+	stack_a = malloc(sizeof(int) * (ac - 1));
+	if (!stack_a)
 		exit(EXIT_FAILURE);
 	while (i < ac)
 	{
-		pile_a[j] = ft_atoi(av[i]);
+		stack_a[j] = ft_atoi(av[i]);
 		i++;
 		j++;
 	}
 	for (int x = 0; x < ac - 1; x++)
 	{
-		ft_printf("%d\n", pile_a[x]);
+		ft_printf("%d\n", stack_a[x]);
 	}
 }
