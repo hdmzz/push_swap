@@ -6,28 +6,29 @@
 /*   By: hdamitzi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/01/26 10:18:25 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/01/28 13:59:26 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*init_new(int nb)
+node	*init_new(int nb)
 {
-	t_list	*new;
+	node	*new;
 
-	new = malloc(sizeof(t_list));
+	new = malloc(sizeof(node));
 	if (!new)
 		exit(EXIT_FAILURE);
 	new->nb = nb;
 	new->next = new;
 	new->prev = new;
+	return (new);
 }
 
-void	insert_begin(t_list **start, int nb)
+void	insert_begin(node **start, int nb)
 {
-	t_list	*last;
-	t_list	*new;
+	node	*last;
+	node	*new;
 
 	if (!(*start)->next && !(*start)->prev)
 	{
@@ -36,7 +37,7 @@ void	insert_begin(t_list **start, int nb)
 		return ;
 	}
 	last = (*start)->prev;
-	new = malloc(sizeof(t_list));
+	new = malloc(sizeof(node));
 	if (!new)
 		exit(EXIT_FAILURE);
 	new->nb = nb;
@@ -47,10 +48,10 @@ void	insert_begin(t_list **start, int nb)
 	*start = new;
 }
 
-void	insert_back(t_list **start, int nb)
+void	insert_back(node **start, int nb)
 {
-	t_list	*last;
-	t_list	*new;
+	node	*last;
+	node	*new;
 
 	if (!(*start)->next && !(*start)->prev)
 	{
@@ -75,10 +76,10 @@ void	insert_back(t_list **start, int nb)
 	(*start)->prev = new;
 }
 
-void	print_list(t_list **start)
+void	printnode(node **start)
 {
-	t_list	*last;
-	t_list	*current;
+	node	*last;
+	node	*current;
 
 	last = (*start)->prev;
 	current = (*start);
@@ -90,22 +91,64 @@ void	print_list(t_list **start)
 	printf("%d\n", current->nb);
 }
 //le dernier devient premier
-void	reverse_rotate(t_list	**first, char pile)
+void	reverse_rotate(node	**first, char pile)
 {
+	(void)pile;
 	(*first) = (*first)->prev;
 }
 
-void	reverse(t_list **first, char pile)
+void	reverse(node **first, char pile)
 {
+	(void)pile;
 	(*first) = (*first)->next;
 }
 
-void	swap(t_list **first, char pile)
+void	delete_node(node *from)//cette fonction ne free pas mais enleve juste un noeud de la liste chainée
 {
-	t_list	*temp;
-	t_list	*second;
-	t_list	*last;
+	if (from == from->next)
+		from = NULL;
+	else
+	{
+		from->prev->next = from->next;
+		from->next->prev = from->prev;
+		from = from->next;
+	}
+}
 
+void	push(node *to, node *from)//premier element de from doit aller a la place de to
+{
+	node	*save;
+//	node	*stock;
+	(void)to;
+	if (!from)
+		return;
+	save = from;//on sauvegarde from puis on peux delete
+	delete_node(from);
+	/* if (to)
+	{
+		//inserer le nouveaux noeud dans la chaine pointées par to
+		stock = to->prev;//stock prend la valeur du dernier noeud de la list
+		to->prev = save;//to->prev a une nouvelle valeur au'il faut remettre dans l'ordre save est le premier de l'autre pile
+		to->prev->next = to;
+		to->prev->prev = stock;
+		to->prev->prev->next = save;
+		to = to->prev;
+	}
+	else
+	{
+		to = save;
+		to->next = to;
+		to->prev = to;
+	} */
+}
+
+void	swap(node **first, char pile)
+{
+	node	*temp;
+	node	*second;
+	node	*last;
+
+	(void)pile;
 	temp = (*first);//temp est sur le premier maillon
 	second = temp->next;//second est le deuxieme
 	last = temp->prev;//le dernier de la chaine
@@ -115,17 +158,22 @@ void	swap(t_list **first, char pile)
 	second->next = temp;
 	second->prev = last;
 	last->next = second;
+
 }
 
 int main()
 {
-	t_list	*lst;
+	node	*lst;
+	node	*lstb;
 
-	lst = malloc(sizeof(t_list));
+	lst = malloc(sizeof(node));
+	lstb = malloc(sizeof(node));
 	if (!lst)
 		exit(EXIT_FAILURE);
 	lst->next = NULL;
 	lst->prev = NULL;
+	lstb->next = NULL;
+	lstb->prev = NULL;
 
 	int		i = 0;
 	while (i < 4)
@@ -133,15 +181,17 @@ int main()
 		insert_begin(&lst, i);
 		i++;
 	}
-	print_list(&lst);
+
+	while(i < 8)
+	{
+		insert_begin(&lstb, i);
+		i++;
+	}
+
+	printnode(&lst);
 	printf("\n");
-	reverse(&lst, 'a');
-	print_list(&lst);
-	printf("\n");
-	reverse_rotate(&lst, 'a');
-	print_list(&lst);
-	printf("\n");
-	swap(&lst, 'a');
-	print_list(&lst);
-	printf("\n");
+	printnode(&lstb);
+	printf("\n push lstb > lst printf lstbdoit to lstb from lst\n");
+	push(lstb, lst);
+	printnode(&lst);
 }

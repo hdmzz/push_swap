@@ -4,16 +4,16 @@ SRCS	= main.c
 CC		= clang
 CFLAGS	= -Wall -Wextra -Werror
 
-%.o: %.c libft/libft.a Makefile
-	$(CC) $< -c -o $@
+%.o: %.c push_swap.h libft/libft.a Makefile
+	$(CC) -I. $< -c -o $@
 
 all:	libft $(NAME)
 
 libft:
 		@make -C libft
 
-$(NAME):	$(SRCS:.c=.o)
-			$(CC) $(CFLAGS) $(SRCS) -L. libft/libft.a -o $(NAME)
+$(NAME):	$(SRCS:.c=.o) push_swap.h
+			$(CC) -I. $(CFLAGS) $(SRCS) -L. libft/libft.a -o $(NAME)
 
 clean:
 			rm -drf $(SRCS:.c=.o)

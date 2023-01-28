@@ -6,7 +6,7 @@
 /*   By: hdamitzi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/01/26 10:18:56 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/01/26 23:12:58 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <stdlib.h>
 #include "libft/libft.h"
 
-typedef struct s_list
+typedef struct node
 {
 	int			nb;
-	struct s_list	*next;
-	struct s_list	*prev;
-}					t_list;
+	struct node	*next;
+	struct node	*prev;
+}				node;
