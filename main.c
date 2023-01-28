@@ -6,7 +6,7 @@
 /*   By: hdamitzi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/01/28 13:59:26 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/01/28 15:18:19 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,10 @@ void	printnode(node **start)
 	current = (*start);
 	while (current->next != (*start))
 	{
-		printf("%d\n", current->nb);
+		ft_printf("%d\n", current->nb);
 		current = current->next;
 	}
-	printf("%d\n", current->nb);
+	ft_printf("%d\n", current->nb);
 }
 //le dernier devient premier
 void	reverse_rotate(node	**first, char pile)
