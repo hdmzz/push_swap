@@ -6,7 +6,7 @@
 /*   By: hdamitzi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/01/29 23:13:17 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/01/29 23:46:20 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_node
 {
-	int			nb;
+	int				nb;
 	struct s_node	*next;
 	struct s_node	*prev;
 }				t_node;
@@ -33,5 +33,7 @@ void	reverse_rotate(t_node	**first, char pile);
 void	reverse(t_node **first, char pile);
 void	delete_t_node(t_node **from);
 void	swap(t_node **first, char pile);
+
+int	list_len(t_node *lst);
 
 #endif
