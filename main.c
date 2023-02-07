@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/07 12:56:46 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:28:56 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ int	main(int ac, char **av)
 
 	lst_a = init_list(ac, av);
 	printt_node(lst_a);
+	ft_printf("list len %d\n", list_len(lst_a));
 }

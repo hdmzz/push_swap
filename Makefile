@@ -16,7 +16,7 @@ libft:
 		@make -C libft
 
 $(NAME):	$(SRCS:.c=.o) push_swap.h
-			$(CC) -I. $(CFLAGS) $(SRCS) -L. libft/libft.a -o $(NAME)
+			$(CC) -g -I. $(CFLAGS) $(SRCS) -L. libft/libft.a -o $(NAME)
 
 clean:
 			rm -drf $(SRCS:.c=.o)
