@@ -6,11 +6,12 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/07 13:28:56 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/08 10:37:22 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
 
 void	insert_back(t_node **start, int nb)
 {
@@ -33,7 +34,7 @@ void	insert_back(t_node **start, int nb)
 
 t_node	*init_list(int ac, char **av)
 {
-	int	i;
+	int		i;
 	t_node	*lst_a;
 
 	i = 1;
@@ -53,8 +54,9 @@ t_node	*init_list(int ac, char **av)
 int	main(int ac, char **av)
 {
 	t_node	*lst_a;
-
+	
 	lst_a = init_list(ac, av);
 	printt_node(lst_a);
-	ft_printf("list len %d\n", list_len(lst_a));
+	ft_printf("sizeof int %d\n", sizeof(INT_MIN));
 }
+# include <stdlib.h>

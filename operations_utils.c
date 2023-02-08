@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 23:40:40 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/07 13:24:15 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/08 08:28:02 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	list_len(t_node *lst)
 	while (lst->next != temp)
 	{
 		lst = lst->next;
-		++i;
+		i++;
 	}
 	return (i);
 }
