@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 23:40:40 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/08 08:28:02 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:09:10 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	printt_node(t_node *start)
 	current = start;
 	while (current->next != start)
 	{
-		ft_printf("%d\n", current->nb);
+		ft_printf("%d %d\n", current->nb, current->index);
 		current = current->next;
 	}
-	ft_printf("%d\n", current->nb);
+	ft_printf("%d %d\n", current->nb, current->index);
 }
 
 void	push(t_node **from, t_node **to)

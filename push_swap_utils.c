@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 16:16:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/07 18:01:37 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/08 11:58:53 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_node	*init_new(int nb)
 	new->nb = nb;
 	new->next = new;
 	new->prev = new;
+	new->index = -1;
 	return (new);
 }
 

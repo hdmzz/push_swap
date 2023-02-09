@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/08 10:36:13 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/09 10:30:09 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_node
 	int				nb;
 	struct s_node	*next;
 	struct s_node	*prev;
+	int				index;
 }				t_node;
 
 void	push(t_node **from, t_node **to);
@@ -34,5 +35,7 @@ void	swap(t_node **first, char pile);
 
 int		list_len(t_node *lst);
 int		is_sorted(t_node *lst, int args_number);
+
+void	index_lst(t_node *lst, int nbr_of_args, int index);
 
 #endif

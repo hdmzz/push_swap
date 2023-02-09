@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/08 10:37:22 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/09 10:47:00 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,17 @@ t_node	*init_list(int ac, char **av)
 		insert_back(&lst_a, ft_atoi(av[i]));
 		i++;
 	}
+	index_lst(lst_a, ac - 1, 0);
 	return (lst_a);
 }
 
 int	main(int ac, char **av)
 {
 	t_node	*lst_a;
-	
+	if (ac == 1)
+	{
+		return (1);
+	}
 	lst_a = init_list(ac, av);
 	printt_node(lst_a);
-	ft_printf("sizeof int %d\n", sizeof(INT_MIN));
 }
-# include <stdlib.h>
