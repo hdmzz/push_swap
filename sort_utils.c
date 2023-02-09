@@ -6,13 +6,13 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:23:07 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/09 11:13:20 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:24:37 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*n_min(t_node *lst, int args_number, t_node *max_node)
+t_node	*n_min(t_node *lst, int args_number, t_node *max_node, int index)
 {
 	int	min;
 	int	i;
@@ -21,7 +21,7 @@ t_node	*n_min(t_node *lst, int args_number, t_node *max_node)
 	while (lst->index != -1)
 		lst = lst->next;
 	min_node = lst;
-	if (min_node == max_node)
+	if (min_node == max_node && index == args_number)
 		return (max_node);
 	min = lst->nb;
 	i = 0;
@@ -65,7 +65,7 @@ void	index_lst(t_node *lst, int args_number, int index)
 	max_node = n_max(lst, args_number);
 	while (index < args_number)
 	{
-		min_node = n_min(lst, args_number, max_node);
+		min_node = n_min(lst, args_number, max_node, index);
 		min_node->index = index;
 		index++;
 	}
