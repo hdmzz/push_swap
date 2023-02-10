@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/10 12:29:53 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/10 16:56:57 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	insert_back(t_node **start, int nb)
 
 t_node	*init_list(int ac, char **av)
 {
-	int		i;
+	int		i; 
 	t_node	*lst_a;
 
 	i = 1;

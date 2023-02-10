@@ -4,7 +4,7 @@ SRCS	=	main.c \
 			operations_utils.c \
 			sort_utils.c \
 			error_handler.c \
-			args_parsing.c
+			parser/args_parsing.c
 
 CC		= clang
 CFLAGS	= -Wall -Wextra -Werror
