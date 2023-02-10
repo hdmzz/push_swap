@@ -2,7 +2,9 @@ NAME	=	push_swap
 SRCS	=	main.c \
 			push_swap_utils.c \
 			operations_utils.c \
-			sort_utils.c
+			sort_utils.c \
+			error_handler.c \
+			args_parsing.c
 
 CC		= clang
 CFLAGS	= -Wall -Wextra -Werror

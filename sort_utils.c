@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:23:07 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/09 11:24:37 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/09 11:29:50 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_node	*n_min(t_node *lst, int args_number, t_node *max_node, int index)
 {
-	int	min;
-	int	i;
+	int		min;
+	int		i;
 	t_node	*min_node;
 
 	while (lst->index != -1)
@@ -39,10 +39,10 @@ t_node	*n_min(t_node *lst, int args_number, t_node *max_node, int index)
 
 t_node	*n_max(t_node *lst, int args_number)
 {
-	int	max;
-	int	i;
-	t_node *max_node;
-	
+	int		max;
+	int		i;
+	t_node	*max_node;
+
 	max = lst->nb;
 	i = 0;
 	while (i++ < args_number)

@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/09 10:30:09 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/10 12:28:58 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ int		list_len(t_node *lst);
 int		is_sorted(t_node *lst, int args_number);
 
 void	index_lst(t_node *lst, int nbr_of_args, int index);
+void	error_handler(void);
+void	is_duplicate(t_node *lst);
 
 #endif

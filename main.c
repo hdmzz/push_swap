@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/09 10:47:00 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/10 12:29:53 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ t_node	*init_list(int ac, char **av)
 int	main(int ac, char **av)
 {
 	t_node	*lst_a;
+	//t_node	*lst_b;
+
 	if (ac == 1)
-	{
 		return (1);
-	}
 	lst_a = init_list(ac, av);
-	printt_node(lst_a);
+	is_duplicate(lst_a);
 }
