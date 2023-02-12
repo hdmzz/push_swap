@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/12 19:29:26 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/12 20:13:57 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ int	main(int ac, char **av)
 	arg_validator(ac, av);
 	lst_a = arg_parser(ac, av);
 	is_duplicate(lst_a);
+	index_lst(lst_a, list_len(lst_a) + 1, 0);
 	printt_node(lst_a);
 }
