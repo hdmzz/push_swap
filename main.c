@@ -6,12 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/10 16:56:57 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/12 19:29:26 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
 
 void	insert_back(t_node **start, int nb)
 {
@@ -21,7 +20,7 @@ void	insert_back(t_node **start, int nb)
 	if (!(*start)->next && !(*start)->prev)
 	{
 		new = init_new(nb);
-		*start = new;
+		(*start) = new;
 		return ;
 	}
 	last = (*start)->prev;
@@ -55,10 +54,9 @@ t_node	*init_list(int ac, char **av)
 int	main(int ac, char **av)
 {
 	t_node	*lst_a;
-	//t_node	*lst_b;
-
-	if (ac == 1)
-		return (1);
-	lst_a = init_list(ac, av);
+	
+	arg_validator(ac, av);
+	lst_a = arg_parser(ac, av);
 	is_duplicate(lst_a);
+	printt_node(lst_a);
 }

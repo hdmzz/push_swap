@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:51:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/10 16:48:38 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/12 19:38:37 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,33 +52,55 @@ void	only_digit(char **tab)
 	while(tab[i])
 	{
 		if (!ft_isdigitstr(tab[i]))
-			exit(EXIT_FAILURE);
+			error_handler();
 		i++;
 	}
 }
 
-void	check_args(int ac, char **av)
-{
-	char	**tab;
-
-	tab = ft_split(av[1], ' ');
-}
-
-void	arg_parser(int	ac, char **av, t_node *lst_a)
+void	arg_validator(int ac, char **av)
 {
 	int		i;
 	char	**tab;
-	char	*nbr;
+	int		each_nbr;
 
 	i = 1;
 	while (i < ac)
 	{
-		tab = ft_split(av[1], ' ');
+		tab = ft_split(av[i], ' ');
+		only_digit(tab);
 		while (*tab)
 		{
-			
+			each_nbr = ft_atoll(*tab);
+			if (each_nbr > INT_MAX || each_nbr < INT_MIN)
+				error_handler();
+			free(*tab);
+			tab++;
 		}
-		
+		i++;
 	}
-	
+}
+
+t_node	*arg_parser(int	ac, char **av)
+{
+	int		i;
+	char	**tab;
+	t_node	*lst_a;
+
+	lst_a = malloc(sizeof(t_node));
+	if (!lst_a)
+		return (NULL);
+	lst_a->next = NULL;
+	lst_a->prev = NULL;
+	i = 1;
+	while (i < ac)
+	{
+		tab = ft_split(av[i], ' ');
+		while (*tab)
+		{
+			insert_back(&lst_a, ft_atoi(*tab));
+			tab++;
+		}
+		i++;
+	}
+	return (lst_a);
 }
