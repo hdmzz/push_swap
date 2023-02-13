@@ -6,7 +6,7 @@ SRCS	=	main.c \
 			error_handler.c \
 			parser/args_parsing.c
 
-CC		= clang
+CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
 %.o: %.c push_swap.h libft/libft.a Makefile

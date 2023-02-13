@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 23:40:40 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/12 20:14:23 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/13 10:06:29 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	printt_node(t_node *start)
 {
-	t_node	*last;
 	t_node	*current;
 
-	last = start->prev;
 	current = start;
 	while (current->next != start)
 	{
