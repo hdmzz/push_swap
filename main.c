@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/12 20:13:57 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:31:06 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,33 @@ t_node	*init_list(int ac, char **av)
 }
 
 int	main(int ac, char **av)
-{
+{void	push_a(t_node **from, t_node **to);
+void	push_b(t_node **from, t_node **to);
+
+void	reverse_rotate_a(t_node	**first, int print);
+void	reverse_rotate_b(t_node	**first, int print);
+void	rrr(t_node **lst_a, t_node **lst_b);
+
+void	rotate_a(t_node **first, int print);
+void	rotate_b(t_node **first, int print);
+void	rr(t_node **lst_a, t_node **lst_b);
+
+void	swap_a(t_node **first, int print);
+void	swap_b(t_node **first, int print);
+void	ss(t_node *first_a, t_node *first_b);
 	t_node	*lst_a;
-	
+	t_node	*lst_b;
+
+	lst_b = NULL;
+
+	if (ac < 2)
+		exit(EXIT_FAILURE);
 	arg_validator(ac, av);
 	lst_a = arg_parser(ac, av);
 	is_duplicate(lst_a);
-	index_lst(lst_a, list_len(lst_a) + 1, 0);
+	index_lst(lst_a, list_len(lst_a), 0);
+	printt_node(lst_a);
+	push_b(&lst_a, &lst_b);
+	ft_printf("\n");
 	printt_node(lst_a);
 }

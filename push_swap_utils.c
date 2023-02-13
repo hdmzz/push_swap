@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 16:16:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/12 00:50:15 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:20:38 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,6 @@ void	insert_begin(t_node **start, int nb)
 	(*start)->prev = new;
 	last->next = new;
 	*start = new;
-}
-
-void	reverse_rotate(t_node	**first, char pile)
-{
-	(void)pile;
-	(*first) = (*first)->prev;
-}
-
-void	reverse(t_node **first, char pile)
-{
-	(void)pile;
-	(*first) = (*first)->next;
 }
 
 void	delete_t_node(t_node **from)

@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/12 19:28:59 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:24:31 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,26 @@ typedef struct s_node
 	int				index;
 }				t_node;
 
-void	push(t_node **from, t_node **to);
 void	insert_begin(t_node **start, int nb);
 void	insert_back(t_node **start, int nb);
 t_node	*init_new(int nb);
 void	printt_node(t_node *start);
-void	reverse_rotate(t_node	**first, char pile);
-void	reverse(t_node **first, char pile);
 void	delete_t_node(t_node **from);
-void	swap(t_node **first, char pile);
+
+void	push_a(t_node **from, t_node **to);
+void	push_b(t_node **from, t_node **to);
+
+void	reverse_rotate_a(t_node	**first, int print);
+void	reverse_rotate_b(t_node	**first, int print);
+void	rrr(t_node **lst_a, t_node **lst_b);
+
+void	rotate_a(t_node **first, int print);
+void	rotate_b(t_node **first, int print);
+void	rr(t_node **lst_a, t_node **lst_b);
+
+void	swap_a(t_node **first, int print);
+void	swap_b(t_node **first, int print);
+void	ss(t_node *first_a, t_node *first_b);
 
 int		list_len(t_node *lst);
 int		is_sorted(t_node *lst, int args_number);
@@ -42,4 +53,6 @@ void	is_duplicate(t_node *lst);
 t_node	*arg_parser(int	ac, char **av);
 void	arg_validator(int ac, char **av);
 
+void	sort_lst(t_node *lst_a);
+void	sort_lst_under_5(t_node *lst_a);
 #endif

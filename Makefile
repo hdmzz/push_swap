@@ -4,7 +4,11 @@ SRCS	=	main.c \
 			operations_utils.c \
 			sort_utils.c \
 			error_handler.c \
-			parser/args_parsing.c
+			parser/args_parsing.c \
+			sort/sort.c \
+			sort/sort_lst_under_5.c \
+			operations/push_swap.c \
+			operations/rotate.c
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
