@@ -6,13 +6,13 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/13 15:24:31 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:12:20 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include "libft/libft.h"
+# include "../libft/libft.h"
 # include <limits.h>
 
 typedef struct s_node

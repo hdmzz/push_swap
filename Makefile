@@ -1,14 +1,15 @@
 NAME	=	push_swap
 SRCS	=	main.c \
 			push_swap_utils.c \
-			operations_utils.c \
+			operations/operations_utils.c \
 			sort/sort_utils.c \
-			error_handler.c \
+			error/error_handler.c \
 			parser/args_parsing.c \
 			sort/sort.c \
 			sort/sort_lst_under_5.c \
 			operations/push_swap.c \
-			operations/rotate.c
+			operations/rotate.c \
+			operations/reverse_rotate.c
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror

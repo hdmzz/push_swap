@@ -6,11 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 16:16:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/13 15:20:38 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:42:16 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "include/push_swap.h"
 
 t_node	*init_new(int nb)
 {

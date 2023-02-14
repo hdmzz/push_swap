@@ -6,11 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/13 11:40:38 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:43:13 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "include/push_swap.h"
 
 void	insert_back(t_node **start, int nb)
 {
@@ -68,4 +68,6 @@ int	main(int ac, char **av)
 	push_b(&lst_a, &lst_b);
 	ft_printf("\n");
 	printt_node(lst_a);
+	ft_printf("\n");
+	printt_node(lst_b);
 }
