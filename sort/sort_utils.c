@@ -6,11 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:23:07 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/09 11:29:50 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:35:43 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 t_node	*n_min(t_node *lst, int args_number, t_node *max_node, int index)
 {

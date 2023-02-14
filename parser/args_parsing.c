@@ -6,11 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:51:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/12 20:23:02 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:36:30 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 int	ft_find_double(t_node *lst)
 {

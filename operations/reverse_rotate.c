@@ -6,11 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 15:20:41 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/13 15:26:30 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:36:01 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	reverse_rotate_a(t_node	**first, int print)
 {

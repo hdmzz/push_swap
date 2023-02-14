@@ -6,11 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:12:24 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/13 12:50:03 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:36:35 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 static void	sort_lst_2(t_node *lst_a)
 {

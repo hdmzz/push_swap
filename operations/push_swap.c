@@ -6,11 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:33:25 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/13 15:15:18 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:35:49 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	push_a(t_node **from, t_node **to)
 {
