@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 10:39:13 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/16 13:36:29 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/16 21:29:39 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void	sort_lst(t_node **lst_a)
 		return ;
 	if (list_len(*lst_a) <= 5)
 		sort_lst_under_5(lst_a);
-	//sort_big_lst(lst_a);
 }

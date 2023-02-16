@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:51:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/14 11:36:30 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/16 21:29:19 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ int	ft_find_double(t_node *lst)
 {
 	int		to_check;
 	t_node	*last;
-	
+
 	to_check = lst->nb;
 	last = lst->prev;
 	lst = lst->next;
-	while(lst != last)
+	while (lst != last)
 	{
 		if (to_check == lst->nb)
 			return (1);
 		lst = lst->next;
 	}
-	if (to_check == lst->nb)
+	if (to_check && to_check == lst->nb)
 		return (1);
 	return (0);
 }
@@ -49,7 +49,7 @@ void	only_digit(char **tab)
 	int	i;
 
 	i = 0;
-	while(tab[i])
+	while (tab[i])
 	{
 		if (!ft_isdigitstr(tab[i]))
 			error_handler();
@@ -80,7 +80,7 @@ void	arg_validator(int ac, char **av)
 	}
 }
 
-t_node	*arg_parser(int	ac, char **av)
+t_node	*arg_parser(int ac, char **av)
 {
 	int		i;
 	char	**tab;
@@ -102,5 +102,7 @@ t_node	*arg_parser(int	ac, char **av)
 		}
 		i++;
 	}
+	if (!lst_a->next && !lst_a->prev)
+		error_handler();
 	return (lst_a);
 }

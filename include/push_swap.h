@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/16 13:46:36 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/16 21:27:48 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ int		is_sorted(t_node *lst, int args_number);
 void	index_lst(t_node *lst, int nbr_of_args, int index);
 void	error_handler(void);
 void	is_duplicate(t_node *lst);
-t_node	*arg_parser(int	ac, char **av);
+t_node	*arg_parser(int ac, char **av);
 void	arg_validator(int ac, char **av);
 
 void	sort_lst(t_node **lst_a);
 void	sort_lst_under_5(t_node **lst_a);
-int	case_of_3_lst(t_node *lst_a);
+int		case_of_3_lst(t_node *lst_a);
 
 #endif
