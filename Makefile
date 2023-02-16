@@ -7,7 +7,7 @@ SRCS	=	main.c \
 			parser/args_parsing.c \
 			sort/sort.c \
 			sort/sort_lst_under_5.c \
-			sort/sort_lst_under_5.c\
+			sort/sort_lst_under_5_utils.c \
 			operations/push_swap.c \
 			operations/rotate.c \
 			operations/reverse_rotate.c
