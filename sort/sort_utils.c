@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:23:07 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/14 11:35:43 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/17 10:26:13 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ int	is_sorted(t_node *lst, int args_number)
 
 	i = 0;
 	is_sorted = 1;
+	if (args_number == 1)
+		return (is_sorted);
 	while (i < args_number)
 	{
 		if (lst->nb > lst->next->nb)
