@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/16 21:27:48 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:00:25 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_node
 	int				index;
 }				t_node;
 
+t_node	*n_min(t_node *lst, int args_number, int index);
 void	insert_begin(t_node **start, int nb);
 void	insert_back(t_node **start, int nb);
 t_node	*init_new(int nb);
@@ -45,7 +46,7 @@ void	swap_b(t_node **first, int print);
 void	ss(t_node *first_a, t_node *first_b);
 
 int		list_len(t_node *lst);
-int		is_sorted(t_node *lst, int args_number);
+int		is_sorted(t_node **lst, int args_number);
 
 void	index_lst(t_node *lst, int nbr_of_args, int index);
 void	error_handler(void);
@@ -53,8 +54,9 @@ void	is_duplicate(t_node *lst);
 t_node	*arg_parser(int ac, char **av);
 void	arg_validator(int ac, char **av);
 
-void	sort_lst(t_node **lst_a);
-void	sort_lst_under_5(t_node **lst_a);
+void	sort_lst(t_node **lst_a, t_node **lst_b);
+void	sort_lst_under_5(t_node **lst_a, t_node **lst_b);
 int		case_of_3_lst(t_node *lst_a);
+int		choose_sens(t_node *lst_a);
 
 #endif

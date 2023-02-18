@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/17 10:31:56 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/17 11:47:38 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,18 @@ t_node	*init_list(int ac, char **av)
 int	main(int ac, char **av)
 {
 	t_node	*lst_a;
-
+	t_node	*lst_b;
+	
 	if (ac < 2)
 		exit(EXIT_FAILURE);
 	arg_validator(ac, av);
 	lst_a = arg_parser(ac, av);
+	lst_b = NULL;
 	is_duplicate(lst_a);
 	index_lst(lst_a, list_len(lst_a), 0);
 	printt_node(lst_a);
 	ft_printf("\n");
-	sort_lst(&lst_a);
+	sort_lst(&lst_a, &lst_b);
 	printt_node(lst_a);
 	ft_printf("\n");
 }
