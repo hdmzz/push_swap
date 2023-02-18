@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 14:24:45 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/18 12:47:00 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:15:17 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,10 @@ int	choose_sens(t_node *lst_a)
 	int		i;
 	int		j;
 	t_node	*start;
-	t_node	*mini;
 
 	i = 0;
 	j = 0;
 	start = lst_a;
-	mini = n_min(lst_a, list_len(lst_a))
 	while (lst_a->index != 0 && i++ < list_len(lst_a))
 		lst_a = lst_a->next;
 	lst_a = start;

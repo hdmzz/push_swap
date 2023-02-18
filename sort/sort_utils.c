@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:23:07 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/18 13:00:00 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:13:55 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,10 @@ t_node	*n_min(t_node *lst, int args_number, int index)
 void	index_lst(t_node *lst, int args_number, int index)
 {
 	t_node	*min_node;
-	t_node	*max_node;
 
-	max_node = n_max(lst, args_number);
 	while (index < args_number)
 	{
-		min_node = n_min(lst, args_number, max_node, index);
+		min_node = n_min(lst, args_number, index);
 		min_node->index = index;
 		index++;
 	}

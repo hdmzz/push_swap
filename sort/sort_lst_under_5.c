@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:12:24 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/18 12:43:21 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:14:50 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ static void	sort_lst_3(t_node **lst_a)
 	}
 }
 
-static void	sort_lst_5(t_node **lst_a, t_node **lst_b)
+/* static void	sort_lst_5(t_node **lst_a, t_node **lst_b)
 {
 	int	sens;
 
+	(void)lst_b;
 	sens = choose_sens(*lst_a);
 	if (sens == 3 || sens == 1)
 	{
@@ -58,7 +59,7 @@ static void	sort_lst_5(t_node **lst_a, t_node **lst_b)
 			reverse_rotate_a(lst_a, 1);
 	}
 	
-}
+} */
 
 static void	sort_lst_4(t_node **lst_a, t_node **lst_b)
 {
