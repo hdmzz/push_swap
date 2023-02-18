@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 14:24:45 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/18 13:15:17 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:37:47 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,25 @@ int	choose_sens(t_node *lst_a)
 	if (i > j)
 		return (2);
 	return (0);
+}
+
+t_node	*find_min(t_node **lst)
+{
+	int		min;
+	int		len;
+	t_node	*min_node;
+
+	min = (*lst)->index;
+	len = list_len(*lst);
+	min_node = *lst;
+	while (len--)
+	{
+		if ((*lst)->index < min)
+		{
+			min = (*lst)->index;
+			min_node = *lst;
+		}
+		*lst = (*lst)->next;
+	}
+	return (min_node);
 }

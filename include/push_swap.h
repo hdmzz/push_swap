@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/18 13:00:25 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:30:52 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void	sort_lst(t_node **lst_a, t_node **lst_b);
 void	sort_lst_under_5(t_node **lst_a, t_node **lst_b);
 int		case_of_3_lst(t_node *lst_a);
 int		choose_sens(t_node *lst_a);
+t_node	*find_min(t_node **lst);
 
 #endif

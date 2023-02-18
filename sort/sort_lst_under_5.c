@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:12:24 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/18 13:14:50 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/18 13:38:28 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,15 @@ static void	sort_lst_3(t_node **lst_a)
 	}
 }
 
-/* static void	sort_lst_5(t_node **lst_a, t_node **lst_b)
+static void	sort_lst_5(t_node **lst_a, t_node **lst_b)
 {
-	int	sens;
+	int		sens;
+	int		index;
+	t_node	*min = NULL;
 
 	(void)lst_b;
-	sens = choose_sens(*lst_a);
+	index = 0;
+	/* sens = choose_sens(*lst_a);
 	if (sens == 3 || sens == 1)
 	{
 		while ((*lst_a)->index != 0)
@@ -57,9 +60,16 @@ static void	sort_lst_3(t_node **lst_a)
 	{
 		while ((*lst_a)->index != 0)
 			reverse_rotate_a(lst_a, 1);
+	} */
+	while (index++ < 2)
+	{
+		min = find_min(lst_a);
+		while (*lst_a != min)
+				rotate_a(lst_a, 1);
+			delete_t_node(lst_a);
 	}
 	
-} */
+}
 
 static void	sort_lst_4(t_node **lst_a, t_node **lst_b)
 {
@@ -94,5 +104,6 @@ void	sort_lst_under_5(t_node **lst_a, t_node **lst_b)
 		sort_lst_3(lst_a);
 	if (len == 4)
 		sort_lst_4(lst_a, lst_b);
-	
+	if (len == 5)
+		sort_lst_5(lst_a, lst_b);
 }
