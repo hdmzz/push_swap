@@ -6,11 +6,28 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/20 20:52:14 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/20 23:31:10 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/push_swap.h"
+
+static void	ft_free_node(t_node **lst)
+{
+	t_node	*temp;
+	t_node	*last;
+
+	temp = NULL;
+	last = NULL;
+	last = (*lst)->prev;
+	while (temp != last)
+	{
+		temp =(*lst)->next;
+		free(*lst);
+		*lst = temp;
+	}
+	free(last);
+}
 
 void	insert_back(t_node **start, int nb)
 {
@@ -58,6 +75,7 @@ int	main(int ac, char **av)
 	
 	if (ac < 2)
 		exit(EXIT_FAILURE);
+
 	arg_validator(ac, av);
 	lst_a = arg_parser(ac, av);
 	lst_b->next = NULL;
@@ -69,4 +87,7 @@ int	main(int ac, char **av)
 	sort_lst(&lst_a, &lst_b);
 	ft_printf("\n");
 	printt_node(lst_a);
+	ft_free_node(&lst_a);
+	free(lst_b);
+	exit(EXIT_SUCCESS);
 }

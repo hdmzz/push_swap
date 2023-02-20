@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:51:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/16 21:29:19 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/20 23:35:43 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,14 @@ void	arg_validator(int ac, char **av)
 {
 	int			i;
 	char		**tab;
+	char		**temp;
 	long long	each_nbr;
 
 	i = 1;
 	while (i < ac)
 	{
 		tab = ft_split(av[i], ' ');
-		only_digit(tab);
+		temp = tab;
 		while (*tab)
 		{
 			each_nbr = ft_atoll(*tab);
@@ -76,6 +77,7 @@ void	arg_validator(int ac, char **av)
 			free(*tab);
 			tab++;
 		}
+		free(temp);
 		i++;
 	}
 }
@@ -84,6 +86,7 @@ t_node	*arg_parser(int ac, char **av)
 {
 	int		i;
 	char	**tab;
+	char	**temp;
 	t_node	*lst_a;
 
 	lst_a = malloc(sizeof(t_node));
@@ -95,11 +98,14 @@ t_node	*arg_parser(int ac, char **av)
 	while (i < ac)
 	{
 		tab = ft_split(av[i], ' ');
+		temp = tab;
 		while (*tab)
 		{
 			insert_back(&lst_a, ft_atoi(*tab));
+			free(*tab);
 			tab++;
 		}
+		free(temp);
 		i++;
 	}
 	if (!lst_a->next && !lst_a->prev)
