@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 14:24:45 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/18 13:37:47 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:58:31 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	case_of_3_lst(t_node *lst_a)
 	return (0);
 }
 
-int	choose_sens(t_node *lst_a)
+int	choose_sens(t_node *lst_a, t_node *min)
 {
 	int		i;
 	int		j;
@@ -43,10 +43,10 @@ int	choose_sens(t_node *lst_a)
 	i = 0;
 	j = 0;
 	start = lst_a;
-	while (lst_a->index != 0 && i++ < list_len(lst_a))
+	while (lst_a->index != min->index && i++ < list_len(lst_a))
 		lst_a = lst_a->next;
 	lst_a = start;
-	while (lst_a->index != 0 && j++ < list_len(lst_a))
+	while (lst_a->index != min->index && j++ < list_len(lst_a))
 		lst_a = lst_a->prev;
 	if (i == j || i < j)
 		return (1);

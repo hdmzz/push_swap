@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:12:24 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/20 20:51:04 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:06:33 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,11 @@ static void	sort_lst_3(t_node **lst_a)
 
 static void	sort_lst_4(t_node **lst_a, t_node **lst_b)
 {
-	int	sens;
+	int		sens;
+	t_node	*min;
 
-	sens = choose_sens(*lst_a);
+	min = find_min(lst_a);
+	sens = choose_sens(*lst_a, min);
 	if (sens == 1)
 	{
 		while ((*lst_a)->index != 0)
@@ -70,31 +72,25 @@ static void	sort_lst_5(t_node **lst_a, t_node **lst_b)
 {
 	int		sens;
 	int		index;
-	t_node	*min = NULL;
+	t_node	*min;
 
-	(void)lst_b;
 	index = 0;
-	/* sens = choose_sens(*lst_a);
-	if (sens == 3 || sens == 1)
-	{
-		while ((*lst_a)->index != 0)
-			rotate_a(lst_a, 1);
-	}
-	if (sens == 2)
-	{
-		while ((*lst_a)->index != 0)
-			reverse_rotate_a(lst_a, 1);
-	} */
+	min = NULL;
 	while (index++ < 2)
 	{
 		min = find_min(lst_a);
-		while (*lst_a != min)
-			rotate_a(lst_a, 1);
+		sens = choose_sens(*lst_a, min);
+		if (sens == 3 || sens == 1)
+			while ((*lst_a)->index != min->index)
+				rotate_a(lst_a, 1);
+		if (sens == 2)
+			while ((*lst_a)->index != min->index)
+				reverse_rotate_a(lst_a, 1);
 		push_b(lst_a, lst_b);
 	}
 	sort_lst_3(lst_a);
-	push_b(lst_b, lst_a);
-	push_b(lst_b, lst_a);
+	push_a(lst_b, lst_a);
+	push_a(lst_b, lst_a);
 }
 
 
