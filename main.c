@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/20 23:31:10 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:06:20 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	insert_back(t_node **start, int nb)
 	if (!(*start)->next && !(*start)->prev)
 	{
 		new = init_new(nb);
+		free(*start);
 		(*start) = new;
 		return ;
 	}
