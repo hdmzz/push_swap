@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:33:25 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/14 11:35:49 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:24:53 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	push_a(t_node **from, t_node **to)
 		return ;
 	save = (*from);
 	delete_t_node(from);
-	if (*to)
+	if ((*to)->next && (*to)->prev)
 	{
 		stock = (*to)->prev;
 		(*to)->prev = save;
@@ -48,7 +48,7 @@ void	push_b(t_node **from, t_node **to)
 		return ;
 	save = (*from);
 	delete_t_node(from);
-	if (*to)
+	if ((*to)->next && (*to)->prev)
 	{
 		stock = (*to)->prev;
 		(*to)->prev = save;

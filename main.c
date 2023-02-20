@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/17 11:47:38 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:52:14 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,13 @@ int	main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	arg_validator(ac, av);
 	lst_a = arg_parser(ac, av);
-	lst_b = NULL;
+	lst_b->next = NULL;
+	lst_b->prev = NULL;
 	is_duplicate(lst_a);
 	index_lst(lst_a, list_len(lst_a), 0);
 	printt_node(lst_a);
 	ft_printf("\n");
 	sort_lst(&lst_a, &lst_b);
-	printt_node(lst_a);
 	ft_printf("\n");
+	printt_node(lst_a);
 }
