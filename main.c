@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/21 00:06:20 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:48:04 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	ft_free_node(t_node **lst)
 	last = (*lst)->prev;
 	while (temp != last)
 	{
-		temp =(*lst)->next;
+		temp = (*lst)->next;
 		free(*lst);
 		*lst = temp;
 	}
@@ -49,34 +49,13 @@ void	insert_back(t_node **start, int nb)
 	(*start)->prev = new;
 }
 
-t_node	*init_list(int ac, char **av)
-{
-	int		i;
-	t_node	*lst_a;
-
-	i = 1;
-	lst_a = malloc(sizeof(t_node));
-	if (!lst_a)
-		return (NULL);
-	lst_a->next = NULL;
-	lst_a->prev = NULL;
-	while (i < ac)
-	{
-		insert_back(&lst_a, ft_atoi(av[i]));
-		i++;
-	}
-	index_lst(lst_a, ac - 1, 0);
-	return (lst_a);
-}
-
 int	main(int ac, char **av)
 {
 	t_node	*lst_a;
 	t_node	*lst_b;
-	
+
 	if (ac < 2)
 		exit(EXIT_FAILURE);
-
 	arg_validator(ac, av);
 	lst_a = arg_parser(ac, av);
 	lst_b->next = NULL;

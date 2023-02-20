@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:51:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/21 00:11:47 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:34:24 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ t_node	*arg_parser(int ac, char **av)
 		return (NULL);
 	lst_a->next = NULL;
 	lst_a->prev = NULL;
-	i = 1;
-	while (i < ac)
+	i = 0;
+	while (i++ < ac)
 	{
 		tab = ft_split(av[i], ' ');
 		temp = tab;
@@ -106,7 +106,6 @@ t_node	*arg_parser(int ac, char **av)
 			tab++;
 		}
 		free(temp);
-		i++;
 	}
 	if (!lst_a->next && !lst_a->prev)
 		error_handler();

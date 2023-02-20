@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:23:07 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/18 13:13:55 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/21 00:38:06 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ t_node	*n_min(t_node *lst, int args_number, int index)
 	}
 	return (min_node);
 }
-
 
 void	index_lst(t_node *lst, int args_number, int index)
 {
