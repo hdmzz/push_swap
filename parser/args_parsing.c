@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:51:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/21 00:34:24 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/21 01:06:41 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,9 @@ t_node	*arg_parser(int ac, char **av)
 	char	**temp;
 	t_node	*lst_a;
 
-	lst_a = malloc(sizeof(t_node));
-	if (!lst_a)
-		return (NULL);
-	lst_a->next = NULL;
-	lst_a->prev = NULL;
+	lst_a = NULL;
 	i = 0;
-	while (i++ < ac)
+	while (i++ < ac - 1)
 	{
 		tab = ft_split(av[i], ' ');
 		temp = tab;
