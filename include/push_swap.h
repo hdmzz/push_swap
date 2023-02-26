@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/20 20:59:32 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/26 14:10:28 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ typedef struct s_node
 }				t_node;
 
 t_node	*n_min(t_node *lst, int args_number, int index);
-void	insert_begin(t_node **start, int nb);
+t_node	*n_max(t_node *lst, int args_number);
+
 void	insert_back(t_node **start, int nb);
 t_node	*init_new(int nb);
 void	printt_node(t_node *start);
@@ -56,6 +57,8 @@ void	arg_validator(int ac, char **av);
 
 void	sort_lst(t_node **lst_a, t_node **lst_b);
 void	sort_lst_under_5(t_node **lst_a, t_node **lst_b);
+void	sort_big_list(t_node **lst_a, t_node **lst_b);
+
 int		case_of_3_lst(t_node *lst_a);
 int		choose_sens(t_node *lst_a, t_node *min);
 t_node	*find_min(t_node **lst);

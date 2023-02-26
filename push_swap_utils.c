@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 16:16:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/21 00:48:41 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/26 14:20:51 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	delete_t_node(t_node **from)
 {
 	if ((*from) == (*from)->next)
 		(*from) = NULL;
-	else
+	else if ((*from)->next && (*from)->prev)
 	{
 		(*from)->prev->next = (*from)->next;
 		(*from)->next->prev = (*from)->prev;

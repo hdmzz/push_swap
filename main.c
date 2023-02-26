@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/21 01:01:10 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/26 21:57:21 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,7 @@ int	main(int ac, char **av)
 	lst_b->prev = NULL;
 	is_duplicate(lst_a);
 	index_lst(lst_a, list_len(lst_a), 0);
-	printt_node(lst_a);
-	ft_printf("\n");
 	sort_lst(&lst_a, &lst_b);
-	ft_printf("\n");
-	printt_node(lst_a);
 	ft_free_node(&lst_a);
-	free(lst_b);
 	exit(EXIT_SUCCESS);
 }

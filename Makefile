@@ -8,6 +8,7 @@ SRCS	=	main.c \
 			sort/sort.c \
 			sort/sort_lst_under_5.c \
 			sort/sort_lst_under_5_utils.c \
+			sort/sort_big_list.c \
 			operations/push_swap.c \
 			operations/rotate.c \
 			operations/reverse_rotate.c
