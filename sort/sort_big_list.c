@@ -6,17 +6,17 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 01:24:09 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/26 21:59:07 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/02/26 22:03:28 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int		max_bits(t_node *lst)
+static int	max_bits(t_node *lst)
 {
 	int		max_bits;
 	t_node	*max;
-	
+
 	max_bits = 0;
 	max = n_max(lst, list_len(lst));
 	while ((max->index >> max_bits) != 0)
