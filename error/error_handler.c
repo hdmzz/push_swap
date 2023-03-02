@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 09:08:48 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/14 11:37:29 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:16:54 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,17 @@ void	error_handler(void)
 {
 	write(STDERR_FILENO, "Error\n", 6);
 	exit(EXIT_FAILURE);
+}
+
+void	ft_free(char **tab)
+{
+	char	**temp;
+
+	temp = tab;
+	while (*tab)
+	{
+		free(*tab);
+		tab++;
+	}
+	free(temp);
 }

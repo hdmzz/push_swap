@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:51:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/03/02 16:49:55 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:20:47 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	only_digit(char **tab)
 {
 	int		i;
 	char	**temp;
-	
+
 	i = 0;
 	temp = tab;
 	while (tab[i])
@@ -84,11 +84,13 @@ void	arg_validator(int ac, char **av)
 		{
 			each_nbr = ft_atoll(*tab);
 			if (each_nbr > 2147483647 || each_nbr < -2147483648)
+			{
+				ft_free(tab);
 				error_handler();
-			free(*tab);
+			}
 			tab++;
 		}
-		free(temp);
+		ft_free(temp);
 		i++;
 	}
 }

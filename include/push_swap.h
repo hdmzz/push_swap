@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/03/02 15:35:00 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:14:21 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ int		case_of_3_lst(t_node *lst_a);
 int		choose_sens(t_node *lst_a, t_node *min);
 t_node	*find_min(t_node **lst);
 
+void	ft_free(char **tab);
 #endif
