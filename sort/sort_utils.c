@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:23:07 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/21 00:38:06 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 15:34:46 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	index_lst(t_node *lst, int args_number, int index)
 	}
 }
 
-int	is_sorted(t_node **lst, int args_number)
+int	is_sorted(t_node *lst, int args_number)
 {
 	int	i;
 	int	is_sorted;
@@ -82,11 +82,11 @@ int	is_sorted(t_node **lst, int args_number)
 		return (is_sorted);
 	while (i < args_number - 1)
 	{
-		if ((*lst)->nb > (*lst)->next->nb)
+		if (lst->nb > lst->next->nb)
 			is_sorted = 0;
-		(*lst) = (*lst)->next;
+		lst = lst->next;
 		i++;
 	}
-	(*lst) = (*lst)->next;
+	lst = lst->next;
 	return (is_sorted);
 }

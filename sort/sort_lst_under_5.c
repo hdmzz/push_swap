@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:12:24 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/21 00:37:49 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 15:35:35 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	sort_lst_4(t_node **lst_a, t_node **lst_b)
 		while ((*lst_a)->index != 0)
 			reverse_rotate_a(lst_a, 1);
 	}
-	if (is_sorted(lst_a, list_len(*lst_a)))
+	if (is_sorted(*lst_a, list_len(*lst_a)))
 		return ;
 	push_b(lst_a, lst_b);
 	sort_lst_3(lst_a);

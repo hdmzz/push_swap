@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 01:24:09 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/26 22:03:28 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 15:49:36 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	sort_big_list(t_node **lst_a, t_node **lst_b)
 
 	i = 0;
 	max_b = max_bits(*lst_a);
-	while (i < max_b)
+	while (max_b--)
 	{
 		j = 0;
 		len = list_len(*lst_a);
@@ -43,6 +43,8 @@ void	sort_big_list(t_node **lst_a, t_node **lst_b)
 				rotate_a(lst_a, 1);
 			else
 				push_b(lst_a, lst_b);
+			if (is_sorted(*lst_a, list_len(*lst_a)))
+				break ;
 		}
 		while (*lst_b)
 			push_a(lst_b, lst_a);

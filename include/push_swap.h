@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:12:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/26 14:10:28 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 15:35:00 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	swap_b(t_node **first, int print);
 void	ss(t_node *first_a, t_node *first_b);
 
 int		list_len(t_node *lst);
-int		is_sorted(t_node **lst, int args_number);
+int		is_sorted(t_node *lst, int args_number);
 
 void	index_lst(t_node *lst, int nbr_of_args, int index);
 void	error_handler(void);
