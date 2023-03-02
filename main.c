@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/26 21:57:21 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 16:08:44 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	ft_free_node(t_node **lst)
 	temp = NULL;
 	last = NULL;
 	last = (*lst)->prev;
+	temp = *lst;
 	while (temp != last)
 	{
 		temp = (*lst)->next;

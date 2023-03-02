@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:51:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/21 01:06:41 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 16:49:55 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,23 @@ void	is_duplicate(t_node *lst)
 
 void	only_digit(char **tab)
 {
-	int	i;
-
+	int		i;
+	char	**temp;
+	
 	i = 0;
+	temp = tab;
 	while (tab[i])
 	{
 		if (!ft_isdigitstr(tab[i]))
+		{
+			while (*tab)
+			{
+				free(*tab);
+				tab++;
+			}
+			free(temp);
 			error_handler();
+		}
 		i++;
 	}
 }
@@ -69,6 +79,7 @@ void	arg_validator(int ac, char **av)
 	{
 		tab = ft_split(av[i], ' ');
 		temp = tab;
+		only_digit(tab);
 		while (*tab)
 		{
 			each_nbr = ft_atoll(*tab);
