@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:51:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/03/02 17:20:47 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:38:50 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,11 @@ void	only_digit(char **tab)
 	temp = tab;
 	while (tab[i])
 	{
+		if (ft_strlen(tab[i]) == 1 && (tab[i][0] == '-'  || tab[i][0] == '+'))
+		{
+			ft_free(tab);
+			error_handler();
+		}
 		if (!ft_isdigitstr(tab[i]))
 		{
 			while (*tab)

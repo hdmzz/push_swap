@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/03/02 16:08:44 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/03/02 17:56:14 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int ac, char **av)
 	t_node	*lst_b;
 
 	if (ac < 2)
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	arg_validator(ac, av);
 	lst_a = arg_parser(ac, av);
 	lst_b->next = NULL;
