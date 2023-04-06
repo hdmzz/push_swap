@@ -18,6 +18,8 @@ int	ft_int_overflow(char *nbr)
 	char	*second;
 	int		res;
 
+	while (*nbr == '0')
+		nbr++;
 	first = ft_atoi(nbr);
 	second = ft_itoa(first);
 	res = ft_strcmp(nbr, second);
