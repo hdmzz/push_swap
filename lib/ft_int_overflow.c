@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:11:24 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/03/29 17:32:25 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:34:33 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_int_overflow(char *nbr)
 	char	*second;
 	int		res;
 
-	while (*nbr == '0')
+	while (ft_strlen(nbr) > 1 && *nbr == '0')
 		nbr++;
 	first = ft_atoi(nbr);
 	second = ft_itoa(first);
