@@ -26,7 +26,7 @@ SRCS	=	main.c \
 			lib/ft_itoa.c
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g3 #-fsanitize=address -g3
 
 %.o: %.c include/push_swap.h lib/lib.h Makefile
 	$(CC) $(CFLAGS) -I. -c $< -o $@
