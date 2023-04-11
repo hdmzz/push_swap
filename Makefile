@@ -25,16 +25,16 @@ SRCS	=	main.c \
 			lib/ft_strlen.c \
 			lib/ft_itoa.c
 
-CC		= gcc -g3
+CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
-%.o: %.c push_swap.h lib/lib.h Makefile
-	$(CC) -I. -c $< -o $@
+%.o: %.c include/push_swap.h lib/lib.h Makefile
+	$(CC) $(CFLAGS) -I. -c $< -o $@
 
 all: $(NAME)
 
-$(NAME):	$(SRCS:.c=.o) include/push_swap.h
-			$(CC) -I. $(SRCS) -o $(NAME)
+$(NAME):	$(SRCS:.c=.o) include/push_swap.h lib/lib.h Makefile
+			$(CC) $(CFLAGS) -I. $(SRCS) -o $(NAME)
 
 clean:
 			rm -drf $(SRCS:.c=.o)
