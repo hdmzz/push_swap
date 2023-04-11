@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lib.h"
 
 void	ft_dispatch(va_list params, const char *format, int i, int *total)
 {

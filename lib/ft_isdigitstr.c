@@ -6,11 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 14:27:51 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/16 21:28:18 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/04/11 10:26:21 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lib.h"
 
 int	ft_isdigitstr(char *str)
 {

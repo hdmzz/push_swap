@@ -9,7 +9,7 @@
 /*   Updated: 2022/11/11 13:29:45 by hdamitzi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "lib.h"
 
 static int	ft_numberlen(long n)
 {

@@ -28,7 +28,7 @@ SRCS	=	main.c \
 CC		= gcc -g3
 CFLAGS	= -Wall -Wextra -Werror
 
-%.o: %.c push_swap.h Makefile
+%.o: %.c push_swap.h lib/lib.h Makefile
 	$(CC) -I. -c $< -o $@
 
 all: $(NAME)

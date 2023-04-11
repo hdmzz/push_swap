@@ -6,11 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:11:24 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/04/07 11:34:33 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/04/11 10:26:11 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lib.h"
 
 int	ft_int_overflow(char *nbr)
 {
