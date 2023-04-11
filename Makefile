@@ -34,7 +34,7 @@ CFLAGS	= -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):	$(SRCS:.c=.o) include/push_swap.h
-			$(CC) -g3 -I. $(SRCS) -o $(NAME)
+			$(CC) -I. $(SRCS) -o $(NAME)
 
 clean:
 			rm -drf $(SRCS:.c=.o)
