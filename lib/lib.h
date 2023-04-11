@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:24:46 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/04/11 10:36:03 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:00:17 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,9 @@ void				ft_putnb_base(unsigned long long nb,
 						char *base, int *total);
 void				ft_putnb(unsigned long long nl, int *total);
 void				ft_put_ptr(void *ptr, int *total);
+void				ft_bzero(void *s, size_t n);
+void				*ft_calloc(size_t count, size_t size);
+
+
 
 #endif

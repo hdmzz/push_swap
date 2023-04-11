@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 11:23:07 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/03/02 15:34:46 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:13:18 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ t_node	*n_max(t_node *lst, int args_number)
 {
 	int		max;
 	int		i;
+	t_node	max_n;
 	t_node	*max_node;
 
 	max = lst->nb;
+	max_node = &max_n;
 	i = 0;
 	while (i++ < args_number)
 	{

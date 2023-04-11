@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handler.c                                    :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/10 09:08:48 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/04/11 14:55:32 by hdamitzi         ###   ########.fr       */
+/*   Created: 2023/04/11 14:58:22 by hdamitzi          #+#    #+#             */
+/*   Updated: 2023/04/11 14:59:04 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "lib.h"
 
-void	error_handler(void)
+void	ft_bzero(void *s, size_t n)
 {
-	write(STDERR_FILENO, "Error\n", 6);
-	exit(EXIT_FAILURE);
-}
+	char	*buff;
+	size_t	i;
 
-void	ft_free(char **tab)
-{
-	int	i;
-
+	buff = (char *)s;
 	i = 0;
-	while (tab[i])
+	while (i < n)
 	{
-		free(tab[i]);
+		buff[i] = 0;
 		i++;
 	}
-	free(tab);
 }

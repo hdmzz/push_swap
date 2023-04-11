@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 16:16:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/02/26 14:20:51 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:01:01 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_node	*init_new(int nb)
 {
 	t_node	*new;
 
-	new = malloc(sizeof(t_node));
+	new = ft_calloc(1, sizeof(t_node));
 	if (!new)
 		exit(EXIT_FAILURE);
 	new->nb = nb;

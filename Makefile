@@ -23,7 +23,9 @@ SRCS	=	main.c \
 			lib/ft_split.c \
 			lib/ft_strcmp.c \
 			lib/ft_strlen.c \
-			lib/ft_itoa.c
+			lib/ft_itoa.c \
+			lib/ft_calloc.c \
+			lib/ft_bzero.c
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -g3 #-fsanitize=address -g3

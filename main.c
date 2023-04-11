@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 10:17:53 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/03/29 16:25:34 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:04:37 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,19 @@ void	insert_back(t_node **start, int nb)
 int	main(int ac, char **av)
 {
 	t_node	*lst_a;
-	t_node	*lst_b;
+	t_node	lst_b;
+	t_node	*lst_b_ptr;
 
+	lst_b_ptr = &lst_b;
 	if (ac < 2)
 		exit(EXIT_SUCCESS);
 	arg_validator(ac, av);
 	lst_a = arg_parser(ac, av);
-	lst_b->next = NULL;
-	lst_b->prev = NULL;
+	lst_b.next = NULL;
+	lst_b.prev = NULL;
 	is_duplicate(lst_a);
 	index_lst(lst_a, list_len(lst_a), 0);
-	sort_lst(&lst_a, &lst_b);
+	sort_lst(&lst_a, &lst_b_ptr);
 	ft_free_node(&lst_a);
 	exit(EXIT_SUCCESS);
 }
