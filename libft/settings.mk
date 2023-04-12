@@ -60,6 +60,6 @@ SRC_BONUS	= ft_lstadd_back_bonus.c \
 			ft_lstnew_bonus.c \
 			ft_lstsize_bonus.c
 
-CC = gcc
+CC = gcc -g3
 CFLAGS += -Wall -Wextra -Werror
 endif

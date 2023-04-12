@@ -14,7 +14,7 @@ SRCS	=	main.c \
 			operations/rotate.c \
 			operations/reverse_rotate.c
 
-CC		= gcc
+CC		= gcc -g3
 CFLAGS	= -Wall -Wextra -Werror
 
 %.o: %.c include/push_swap.h libft/libft.a libft/libft.h Makefile

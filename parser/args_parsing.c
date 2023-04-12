@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:51:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/04/11 14:38:47 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/04/12 13:40:35 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,11 @@ void	arg_validator(int ac, char **av)
 	char		**tab;
 
 	i = 1;
-	j = 0;
 	while (i < ac)
 	{
 		tab = ft_split(av[i], ' ');
 		only_digit(tab);
+		j = 0;
 		while (tab[j])
 		{
 			if (ft_int_overflow(tab[j]) != 0)
