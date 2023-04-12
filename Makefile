@@ -20,6 +20,8 @@ CFLAGS	= -Wall -Wextra -Werror
 %.o: %.c include/push_swap.h libft/libft.a libft/libft.h Makefile
 	$(CC) $(CFLAGS) -I. -c $< -o $@
 
+.PHONY:	all libft fclean re
+
 all: libft $(NAME)
 
 $(NAME):	$(SRCS:.c=.o)
@@ -37,5 +39,3 @@ fclean:	clean
 		@make fclean -C libft
 
 re:		fclean all
-
-.PHONY:	all libft fclean re
