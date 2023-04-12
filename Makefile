@@ -24,14 +24,18 @@ all: libft $(NAME)
 
 $(NAME):	$(SRCS:.c=.o)
 		$(CC) $(CFLAGS) -I. $(SRCS) libft/libft.a -o $(NAME)
+
 libft:
 		@make -C libft
+
 clean:
 		rm -drf $(SRCS:.c=.o)
 		@make clean -C libft
+
 fclean:	clean
 		rm -drf $(NAME)
 		@make fclean -C libft
+
 re:		fclean all
 
 .PHONY:	all libft fclean re
