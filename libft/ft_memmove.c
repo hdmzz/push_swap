@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hdamitzi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 14:57:51 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/04/11 14:58:08 by hdamitzi         ###   ########.fr       */
+/*   Created: 2022/11/14 10:54:58 by hdamitzi          #+#    #+#             */
+/*   Updated: 2022/11/14 10:55:03 by hdamitzi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*buff;
-	size_t	i;
+	char	*d;
+	char	*s;
 
-	i = count * size;
-	if (i && i / size != count)
+	if (!src && !dst)
 		return (NULL);
-	buff = malloc(size * count);
-	if (!buff)
-		return (NULL);
-	ft_bzero(buff, size * count);
-	return (buff);
+	if (src > dst)
+		dst = ft_memcpy(dst, src, len);
+	else
+	{
+		d = (char *)dst;
+		s = (char *)src;
+		while (len--)
+			d[len] = s[len];
+	}
+	return (dst);
 }

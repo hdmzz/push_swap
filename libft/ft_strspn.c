@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigitstr.c                                    :+:      :+:    :+:   */
+/*   ft_strspn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/10 14:27:51 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/04/11 10:26:21 by hdamitzi         ###   ########.fr       */
+/*   Created: 2023/03/07 16:28:08 by hdamitzi          #+#    #+#             */
+/*   Updated: 2023/03/07 16:43:22 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "libft.h"
 
-int	ft_isdigitstr(char *str)
+size_t	ft_strspn(const char *s, const char *accept)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (str[i])
+	while (s[i] != '\0')
 	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
+		if (ft_strchr(accept, s[i]) == 0)
+			break ;
+		++i;
 	}
-	return (1);
+	return (i);
 }

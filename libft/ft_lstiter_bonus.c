@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hdamitzi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 14:58:22 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/04/11 14:59:04 by hdamitzi         ###   ########.fr       */
+/*   Created: 2022/11/21 12:13:26 by hdamitzi          #+#    #+#             */
+/*   Updated: 2022/11/21 12:13:28 by hdamitzi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	*buff;
-	size_t	i;
+	t_list	*temp;
 
-	buff = (char *)s;
-	i = 0;
-	while (i < n)
+	if (!lst || !f)
+		return ;
+	temp = lst;
+	while (lst)
 	{
-		buff[i] = 0;
-		i++;
+		temp = lst->next;
+		f(lst->content);
+		lst = temp;
 	}
 }

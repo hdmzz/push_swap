@@ -12,38 +12,26 @@ SRCS	=	main.c \
 			sort/sort_big_list.c \
 			operations/push_swap.c \
 			operations/rotate.c \
-			operations/reverse_rotate.c \
-			lib/ft_atoi.c \
-			lib/ft_int_overflow.c \
-			lib/ft_isdigit.c \
-			lib/ft_isdigitstr.c \
-			lib/ft_printf.c \
-			lib/ft_put.c \
-			lib/ft_putnb.c \
-			lib/ft_split.c \
-			lib/ft_strcmp.c \
-			lib/ft_strlen.c \
-			lib/ft_itoa.c \
-			lib/ft_calloc.c \
-			lib/ft_bzero.c
+			operations/reverse_rotate.c
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g3 #-fsanitize=address -g3
+CFLAGS	= -Wall -Wextra -Werror
 
-%.o: %.c include/push_swap.h lib/lib.h Makefile
+%.o: %.c include/push_swap.h libft/libft.a libft/libft.h Makefile
 	$(CC) $(CFLAGS) -I. -c $< -o $@
 
-all: $(NAME)
+all: libft $(NAME)
 
-$(NAME):	$(SRCS:.c=.o) include/push_swap.h lib/lib.h Makefile
-			$(CC) $(CFLAGS) -I. $(SRCS) -o $(NAME)
-
+$(NAME):	$(SRCS:.c=.o)
+		$(CC) $(CFLAGS) -I. $(SRCS) libft/libft.a -o $(NAME)
+libft:
+		@make -C libft
 clean:
-			rm -drf $(SRCS:.c=.o)
-
+		rm -drf $(SRCS:.c=.o)
+		@make clean -C libft
 fclean:	clean
 		rm -drf $(NAME)
-
+		@make fclean -C libft
 re:		fclean all
 
 .PHONY:	all libft fclean re

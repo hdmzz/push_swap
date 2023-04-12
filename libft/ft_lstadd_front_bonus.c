@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put.c                                           :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdamitzi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 10:05:36 by hdamitzi          #+#    #+#             */
-/*   Updated: 2022/12/12 10:05:38 by hdamitzi         ###   ########lyon.fr   */
+/*   Created: 2022/11/21 11:52:49 by hdamitzi          #+#    #+#             */
+/*   Updated: 2022/11/21 11:52:52 by hdamitzi         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "libft.h"
 
-void	ft_putc(char c, int *total)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	*total += write(1, &c, 1);
-}
-
-void	ft_puts(char *str, int *total)
-{
-	if (!str)
-		ft_puts("(null)", total);
-	else
-	{
-		while (*str != '\0')
-		{
-			ft_putc(*str, total);
-			str++;
-		}
-	}
+	new->next = *lst;
+	*lst = new;
 }

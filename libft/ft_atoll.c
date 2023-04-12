@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdamitzi <hdamitzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 17:03:04 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/04/11 10:26:55 by hdamitzi         ###   ########.fr       */
+/*   Created: 2023/02/10 10:35:00 by hdamitzi          #+#    #+#             */
+/*   Updated: 2023/03/02 17:45:42 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "libft.h"
 
-int	ft_strcmp(char *s1, char *s2)
+long long	ft_atoll(const char *str)
 {
-	int	i;
+	size_t			i;
+	size_t			result;
+	int				sign;
 
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+	result = 0;
+	sign = 1;
+	while (ft_isspace(str[i]))
 		i++;
-	return (s1[i] - s2[i]);
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] && ft_isdigit(str[i]))
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }
