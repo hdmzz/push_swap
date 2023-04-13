@@ -1,13 +1,10 @@
 S = src/
 O = obj/
-D = dep/
 LIBFT = libft.a
 
 include settings.mk
 
 OBJ = $(SRCLIBFT:%=$O%.o)
-DEP = $(SRCLIBFT:%=$D%.d)
-DEPA = $(LIBFT:%=$D%.d)
 
 RM = /bin/rm -rf
 RMDIR = /bin/rmdir
@@ -24,19 +21,11 @@ $(OBJ): | $O
 $(OBJ): $O%.o: % libft.h Makefile settings.mk
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$D:
-	@mkdir $@
-
-$(DEP): | $D
-
-$(DEP): $D%.d: %
-	$(CC) $(CFLAGS) -MM -MF $@ -MT "$O$*.O $@" $<
-
 $(NAME): $(OBJ)
 	ar -rcs $@ $^
 
 cleanobj:
-	$(RM) $(wildcard $(OBJ))
+	$(RM) $(SRCLIBFT:%=$O%.o)
 
 cleanobjdir: cleanobj
 	$(RM) $O
@@ -48,5 +37,3 @@ fclean: clean
 	$(RM) $D
 
 re: fclean all
-
--include $(DEP)
